@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <h1 class="display-4">Cadastro Empresa</h1>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="cnpj-inp">CNPJ</label>
+      <input [(ngModel)]="empresa.cnpj" type="text" class="form-control" id="cnpj-inp">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="razao-inp">Razão Social</label>
+      <input [(ngModel)]="empresa.razaoSocial" type="text" class="form-control" id="razao-inp">
+    </div>
+    <div class="form-group col-md-2">
+      <label for="atuacao-inp">Ramo Atuação</label>
+      <input [(ngModel)]="empresa.ramoAtuacao" type="text" class="form-control" id="atuacao-inp">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <button type="button" class="btn btn-warning" (click)="limparInputs()">Limpar</button>
+      <button type="button" class="btn btn-success" (click)="cadastrarEmpresa()">Cadastrar</button>
+    </div>
+  </div>
+</div>

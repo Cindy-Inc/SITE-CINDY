@@ -1,17 +1,101 @@
 <div class="container-fluid">
-  <h1 class="display-4">Cadastro Empresa</h1>
+  <h1 class="display-4" id="titulo">Cadastro Usuário</h1>
   <div class="form-row">
     <div class="form-group col-md-2">
-      <label for="cnpj-inp">CNPJ</label>
-      <input [(ngModel)]="empresa.cnpj" type="text" class="form-control" id="cnpj-inp">
+      <img src="" id="cadastro-avatar-img" class="rounded float-left" alt="...">
     </div>
     <div class="form-group col-md-2">
-      <label for="razao-inp">Razão Social</label>
-      <input [(ngModel)]="empresa.razaoSocial" type="text" class="form-control" id="razao-inp">
+      <div class="form-row">
+        <label for="cnpj-inp">Código</label>
+        <input placehoder="Gerado automaticamente" type="text" class="form-control" id="cnpj-inp">
+      </div>
+      <div class="form-row">
+        <label for="razao-inp">Nome Completo</label>
+        <input [(ngModel)]="empresa.razaoSocial" type="text" class="form-control" id="razao-inp">
+      </div>
+      <div class="form-row">
+        <label for="razao-inp">Foto de Perfil</label>
+        <div class="custom-file" id="customFile" lang="es">
+          <input type="file" (change)="fileChange($event)" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
+          <label class="custom-file-label" for="exampleInputFile">
+            Select file...
+          </label>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-12">
+          <label for="atuacao-inp">Sexo</label>
+          <div class="radio">
+            <label>
+              <input type="radio" name="optradio">Feminino</label>
+            <label>
+              <input type="radio" name="optradio">Masculino</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="atuacao-inp">CEP</label>
+      <div class="input-group mb-3">
+          <input [(ngModel)]="cep" type="text" class="form-control">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" (click)="consultaCep()" type="button">Consultar</button>
+          </div>
+        </div>
+      <!-- <input [(ngModel)]="cep" (click)="consultaCep($event)" type="text" class="form-control">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button">Button</button>
+      </div> -->
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-3">
+      <label for="atuacao-inp">Logradouro</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-1">
+      <label for="atuacao-inp">Número</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="form-group col-md-1">
+      <label for="atuacao-inp">Complemento</label>
+      <input type="text" class="form-control">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="atuacao-inp">Estado</label>
+      <select type="text" class="form-control">
+        <option>SP</option>
+        <option>RG</option>
+      </select>
     </div>
     <div class="form-group col-md-2">
-      <label for="atuacao-inp">Ramo Atuação</label>
-      <input [(ngModel)]="empresa.ramoAtuacao" type="text" class="form-control" id="atuacao-inp">
+      <label for="atuacao-inp">Cidade</label>
+      <select type="text" class="form-control">
+        <option>São Paulo</option>
+        <option>Rio de Janeiro</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="atuacao-inp">E-mail</label>
+      <input type="e-mail" class="form-control">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="atuacao-inp">Senha</label>
+      <input type="password" class="form-control">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="atuacao-inp">Confirmar Senha</label>
+      <input type="password" class="form-control">
     </div>
   </div>
   <div class="form-row">

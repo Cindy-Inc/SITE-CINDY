@@ -6,10 +6,9 @@ import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { CadastroEmpresaComponent } from './cadastro-empresa/cadastro-empresa.component';
+import { CadastroEmpresaComponent, CadastroProdutoComponent, CadastroUsuarioComponent } from './cadastro';
 import { ConsultaCepService } from './service';
-import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
-import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
+import { EnderecoComponent } from './cadastro/endereco/endereco.component';
 
 
 @NgModule({
@@ -17,7 +16,8 @@ import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.co
     AppComponent,
     CadastroEmpresaComponent,
     CadastroUsuarioComponent,
-    CadastroProdutoComponent
+    CadastroProdutoComponent,
+    EnderecoComponent
   ],
   imports: [
     BrowserModule,

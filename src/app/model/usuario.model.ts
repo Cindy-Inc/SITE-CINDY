@@ -1,30 +1,28 @@
+import { Endereco } from './endereco.model';
+
 export class Usuario {
 
-    codigo: string;
+    // codigo: string;
     nome: string;
+    sobrenome: string;
     sexo: string;
-    cep: string;
-    logradouro: string;
-    numero: string;
-    complemento: string;
-    uf: string;
-    cidade: string;
+    endereco: Endereco;
     email: string;
     senha: string;
 
     constructor(usuario: Usuario = null) {
         if (usuario) {
-            this.codigo = usuario.codigo;
+            // this.codigo = usuario.codigo;
             this.nome = usuario.nome;
+            this.sobrenome = usuario.sobrenome;
             this.sexo = usuario.sexo;
-            this.cep = usuario.cep;
-            this.logradouro = usuario.logradouro;
-            this.numero = usuario.numero;
-            this.complemento = usuario.complemento;
-            this.uf = usuario.uf;
-            this.cidade = usuario.cidade;
             this.email = usuario.email;
             this.senha = usuario.senha;
+            if (usuario.endereco) {
+                this.endereco = usuario.endereco;
+            } else {
+                this.endereco = new Endereco();
+            }
         }
     }
 }

@@ -5,13 +5,19 @@
       <img src="" id="cadastro-avatar-img" class="rounded float-left" alt="...">
     </div>
     <div class="form-group col-md-2">
-      <div class="form-row">
-        <label for="cnpj-inp">Código</label>
+      <!-- <div class="form-row">
+        <label for="cnpj-inp">Usuário</label>
         <input [(ngModel)]="usuario.codigo" placehoder="Gerado automaticamente" type="text" class="form-control" id="cnpj-inp">
-      </div>
+      </div> -->
       <div class="form-row">
-        <label for="razao-inp">Nome Completo</label>
-        <input [(ngModel)]="usuario.nome" type="text" class="form-control" id="razao-inp">
+        <div class="form-group col-md-6">
+          <label for="atuacao-inp">Nome</label>
+          <input [(ngModel)]="usuario.nome" type="text" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="atuacao-inp">Sobrenome</label>
+          <input [(ngModel)]="usuario.sobrenome" type="text" class="form-control">
+        </div>
       </div>
       <div class="form-row">
         <label for="razao-inp">Foto de Perfil</label>
@@ -35,51 +41,7 @@
       </div>
     </div>
   </div>
-  <div class="form-row">
-    <div class="form-group col-md-2">
-      <label for="atuacao-inp">CEP</label>
-      <div class="input-group mb-3">
-          <input [(ngModel)]="usuario.cep" [(ngModel)]="cep" type="text" class="form-control">
-          <div class="input-group-append">
-            <button class="btn btn-outline-secondary" (click)="consultaCep()" type="button">Consultar</button>
-          </div>
-        </div>
-      <!-- <input [(ngModel)]="cep" (click)="consultaCep($event)" type="text" class="form-control">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">Button</button>
-      </div> -->
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-3">
-      <label for="atuacao-inp">Logradouro</label>
-      <input [(ngModel)]="usuario.logradouro" type="text" class="form-control">
-    </div>
-    <div class="form-group col-md-1">
-      <label for="atuacao-inp">Número</label>
-      <input [(ngModel)]="usuario.numero" type="text" class="form-control">
-    </div>
-    <div class="form-group col-md-1">
-      <label for="atuacao-inp">Complemento</label>
-      <input [(ngModel)]="usuario.complemento" type="text" class="form-control">
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-2">
-      <label for="atuacao-inp">Estado</label>
-      <select [(ngModel)]="usuario.uf" type="text" class="form-control">
-        <option>SP</option>
-        <option>RG</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="atuacao-inp">Cidade</label>
-      <select [(ngModel)]="usuario.cidade" type="text" class="form-control">
-        <option>São Paulo</option>
-        <option>Rio de Janeiro</option>
-      </select>
-    </div>
-  </div>
+  <app-endereco [endereco]="usuario.endereco"></app-endereco>
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="atuacao-inp">E-mail</label>

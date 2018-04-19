@@ -8,12 +8,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CadastroEmpresaComponent } from './cadastro-empresa/cadastro-empresa.component';
 import { ConsultaCepService } from './service';
+import { CadastroUsuarioComponent } from './cadastro-usuario/cadastro-usuario.component';
+import { CadastroProdutoComponent } from './cadastro-produto/cadastro-produto.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CadastroEmpresaComponent
+    CadastroEmpresaComponent,
+    CadastroUsuarioComponent,
+    CadastroProdutoComponent
   ],
   imports: [
     BrowserModule,

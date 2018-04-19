@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Empresa } from '../model';
+import { Empresa, Usuario } from '../model';
 import { ConsultaCepService } from '../service';
+import { ConsultaCepDTO } from '../dto';
 
 @Component({
   selector: 'app-cadastro-empresa',
@@ -10,20 +11,31 @@ import { ConsultaCepService } from '../service';
 })
 export class CadastroEmpresaComponent implements OnInit {
 
-  empresa: Empresa;
+  usuario: Usuario;
   cep: string;
 
   constructor(private consultaCepService: ConsultaCepService) {
-    this.empresa = new Empresa();
-   }
+    this.usuario = new Usuario();
+  }
 
   ngOnInit() {
   }
 
-  consultaCep() {
+  private consultaCep() {
     this.consultaCepService.getEnderecoFromCEP(this.cep).subscribe(end => {
-      console.log(end);
+      this.fromCep(end);
     });
+  }
+
+  private fromCep(enderecoCep: ConsultaCepDTO) {
+    if (enderecoCep) {
+      // this.usuario.bairro = enderecoCep.bairro;
+      this.usuario.cep = enderecoCep.cep;
+      this.usuario.complemento = enderecoCep.complemento;
+      this.usuario.cidade = enderecoCep.localidade;
+      this.usuario.logradouro = enderecoCep.logradouro;
+      this.usuario.uf = enderecoCep.uf;
+    }
   }
 
   fileChange(event) {
@@ -40,11 +52,11 @@ export class CadastroEmpresaComponent implements OnInit {
   }
 
   limparInputs() {
-    this.empresa = new Empresa();
+    this.usuario = new Usuario();
   }
 
   cadastrarEmpresa() {
-    console.log(this.empresa);
+    console.log(this.usuario);
   }
 
 }

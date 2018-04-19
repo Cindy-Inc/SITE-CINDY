@@ -7,11 +7,11 @@
     <div class="form-group col-md-2">
       <div class="form-row">
         <label for="cnpj-inp">Código</label>
-        <input placehoder="Gerado automaticamente" type="text" class="form-control" id="cnpj-inp">
+        <input [(ngModel)]="usuario.codigo" placehoder="Gerado automaticamente" type="text" class="form-control" id="cnpj-inp">
       </div>
       <div class="form-row">
         <label for="razao-inp">Nome Completo</label>
-        <input [(ngModel)]="empresa.razaoSocial" type="text" class="form-control" id="razao-inp">
+        <input [(ngModel)]="usuario.nome" type="text" class="form-control" id="razao-inp">
       </div>
       <div class="form-row">
         <label for="razao-inp">Foto de Perfil</label>
@@ -39,7 +39,7 @@
     <div class="form-group col-md-2">
       <label for="atuacao-inp">CEP</label>
       <div class="input-group mb-3">
-          <input [(ngModel)]="cep" type="text" class="form-control">
+          <input [(ngModel)]="usuario.cep" [(ngModel)]="cep" type="text" class="form-control">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" (click)="consultaCep()" type="button">Consultar</button>
           </div>
@@ -53,28 +53,28 @@
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="atuacao-inp">Logradouro</label>
-      <input type="text" class="form-control">
+      <input [(ngModel)]="usuario.logradouro" type="text" class="form-control">
     </div>
     <div class="form-group col-md-1">
       <label for="atuacao-inp">Número</label>
-      <input type="text" class="form-control">
+      <input [(ngModel)]="usuario.numero" type="text" class="form-control">
     </div>
     <div class="form-group col-md-1">
       <label for="atuacao-inp">Complemento</label>
-      <input type="text" class="form-control">
+      <input [(ngModel)]="usuario.complemento" type="text" class="form-control">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="atuacao-inp">Estado</label>
-      <select type="text" class="form-control">
+      <select [(ngModel)]="usuario.uf" type="text" class="form-control">
         <option>SP</option>
         <option>RG</option>
       </select>
     </div>
     <div class="form-group col-md-2">
       <label for="atuacao-inp">Cidade</label>
-      <select type="text" class="form-control">
+      <select [(ngModel)]="usuario.cidade" type="text" class="form-control">
         <option>São Paulo</option>
         <option>Rio de Janeiro</option>
       </select>
@@ -83,13 +83,13 @@
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="atuacao-inp">E-mail</label>
-      <input type="e-mail" class="form-control">
+      <input [(ngModel)]="usuario.email" type="e-mail" class="form-control">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="atuacao-inp">Senha</label>
-      <input type="password" class="form-control">
+      <input [(ngModel)]="usuario.senha" type="password" class="form-control">
     </div>
   </div>
   <div class="form-row">

@@ -13,24 +13,20 @@
   </div>
   <h4 class="display-5" id="titulo">Dados Estabelecimento</h4>
   <div class="form-row">
-    <div class="form-group col-md-1">
+    <div class="form-group col-md-3">
       <label for="atuacao-inp">Nome Fantasia</label>
-      <input [(ngModel)]="usuario.logradouro" type="text" class="form-control">
+      <input type="text" class="form-control">
     </div>
     <div class="form-group col-md-2">
       <label for="atuacao-inp">Ramo de atuação</label>
-      <input [(ngModel)]="usuario.numero" type="text" class="form-control">
+      <select type="text" class="form-control">
+          <option>
+            Pizzaria
+          </option>
+        </select>
     </div>
   </div>
-  <h5 class="pointer" (click)="addEndereco()">
-    <ng-container *ngIf="!adicionarEndereco">
-      <b>+ </b>Adicionar Endereço</ng-container>
-    <ng-container *ngIf="adicionarEndereco">
-      <b>- </b>Remover Endereço</ng-container>
-  </h5>
-  <app-endereco *ngIf="adicionarEndereco" [endereco]="novoEndereco"></app-endereco>
-  <h5 class="pointer" (click)="addProduto()">
-    <b>+</b>Adicionar Produto</h5>
+  <app-endereco [endereco]="novoEndereco"></app-endereco>
   <div class="form-row">
     <div class="form-group col-md-2">
       <button type="button" class="btn btn-warning" (click)="limparInputs()">Limpar</button>

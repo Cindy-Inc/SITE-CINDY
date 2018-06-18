@@ -13,7 +13,6 @@ export class CadastroEmpresaComponent implements OnInit {
 
   usuario: Usuario;
   novoEndereco: Endereco;
-  adicionarEndereco: boolean;
 
   constructor() {
     this.usuario = new Usuario();
@@ -24,13 +23,7 @@ export class CadastroEmpresaComponent implements OnInit {
   }
 
   addEndereco() {
-    this.adicionarEndereco = !this.adicionarEndereco;
-    if (this.adicionarEndereco) {
-      this.novoEndereco = new Endereco();
-    }
+    this.novoEndereco = new Endereco();
   }
 
-  addProduto() {
-
-  }
 }

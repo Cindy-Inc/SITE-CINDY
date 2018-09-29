@@ -1,0 +1,36 @@
+<div class="container-fluid dashboard-container">
+  <h1 class="display-4" id="titulo">Dashboard de Pedidos</h1>
+  <div class="table-wrapper">
+    <table class="table table-striped">
+      <thead>
+        <tr (click)="showOrder()">
+          <th scope="col">#</th>
+          <th scope="col">Descrição</th>
+          <th scope="col">Endereço</th>
+          <th scope="col">Horário</th>
+          <th scope="col">Preço</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders; let i = index">
+          <th scope="row">{{order?.order_number}}</th>
+          <td>
+            <table class="table table-bordered">
+              <tr *ngFor="let product of order.products">
+                <td>{{product?.description}}</td>
+              </tr>
+            </table>
+          </td>
+          <td>{{order?.address}}</td>
+          <td>{{order?.createdAt | date:'shortTime'}}</td>
+          <td>R${{order?.price}}</td>
+          <td>
+            <app-status-badge [status]="order.status"></app-status-badge>
+            <app-change-status (changeStatus)="changeStatus($event, i)"></app-change-status>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

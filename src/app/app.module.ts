@@ -9,6 +9,10 @@ import { AppComponent } from './app.component';
 import { CadastroEmpresaComponent, CadastroProdutoComponent, CadastroUsuarioComponent } from './cadastro';
 import { ConsultaCepService } from './service';
 import { EnderecoComponent } from './cadastro/endereco/endereco.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { ChangeStatusComponent } from './dashboard/change-status/change-status.component';
+import { StatusBadgeComponent } from './dashboard/status-badge/status-badge.component';
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { EnderecoComponent } from './cadastro/endereco/endereco.component';
     CadastroEmpresaComponent,
     CadastroUsuarioComponent,
     CadastroProdutoComponent,
-    EnderecoComponent
+    EnderecoComponent,
+    DashboardComponent,
+    LoginComponent,
+    ChangeStatusComponent,
+    StatusBadgeComponent
   ],
   imports: [
     BrowserModule,

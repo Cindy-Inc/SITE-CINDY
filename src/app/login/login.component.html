@@ -1,0 +1,11 @@
+<div class="form-signin" (keypress)="keyPresslogin($event)">
+    <h1 class="display-4" id="titulo">CINDY</h1>
+    <h1 class="h3 mb-3 font-weight-normal">Digite seu CNPJ e senha</h1>
+    <label for="inputCNPJ" class="sr-only">CNPJ</label>
+    <input [(ngModel)]="user.cnpj" type="text" id="inputCNPJ" class="cnpj form-control login-inp" placeholder="CNPJ" autofocus="true">
+    <label for="inputPassword" class="sr-only">Senha</label>
+    <input [(ngModel)]="user.senha" type="password" id="inputPassword" class="form-control login-inp" placeholder="Senha" required="">
+    <button class="btn btn-lg btn-primary btn-block" (click)="login()">Entrar</button>
+    <p *ngIf="returnMsg" class="mt-5 mb-3 text-danger">{{returnMsg}}</p>
+    <p class="mt-5 mb-3 text-muted">Cindy 2018</p>
+  </div>

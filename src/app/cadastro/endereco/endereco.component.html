@@ -2,46 +2,42 @@
     <div class="form-group col-md-2">
       <label for="atuacao-inp">CEP</label>
       <div class="input-group mb-3">
-          <input [(ngModel)]="endereco.cep" type="text" class="form-control">
+          <input [(ngModel)]="user.zip" type="text" class="form-control">
           <div class="input-group-append">
             <button class="btn btn-outline-secondary" (click)="consultaCep()" type="button">Consultar</button>
           </div>
         </div>
-      <!-- <input [(ngModel)]="cep" (click)="consultaCep($event)" type="text" class="form-control">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">Button</button>
-      </div> -->
     </div>
     <div class="form-group col-md-2">
         <label for="atuacao-inp">Bairro</label>
-        <input [(ngModel)]="endereco.bairro" [readonly]="isBuscandoCEP" type="text" class="form-control">
+        <input [(ngModel)]="user.distric" [readonly]="isBuscandoCEP" type="text" class="form-control">
       </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-3">
       <label for="atuacao-inp">Logradouro</label>
-      <input [(ngModel)]="endereco.logradouro" [readonly]="isBuscandoCEP" type="text" class="form-control">
+      <input [(ngModel)]="user.logradouro" [readonly]="isBuscandoCEP" type="text" class="form-control">
     </div>
     <div class="form-group col-md-1">
       <label for="atuacao-inp">Número</label>
-      <input [(ngModel)]="endereco.numero" type="text" class="form-control">
+      <input [(ngModel)]="user.number" type="text" class="form-control">
     </div>
     <div class="form-group col-md-1">
       <label for="atuacao-inp">Complemento</label>
-      <input [(ngModel)]="endereco.complemento" type="text" class="form-control">
+      <input [(ngModel)]="user.complement" type="text" class="form-control">
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-2">
       <label for="atuacao-inp">Estado</label>
-      <select [(ngModel)]="endereco.uf" [disabled]="isBuscandoCEP" type="text" class="form-control">
+      <select [(ngModel)]="user.state" [disabled]="isBuscandoCEP" type="text" class="form-control">
         <option>SP</option>
-        <option>RG</option>
+        <option>RJ</option>
       </select>
     </div>
     <div class="form-group col-md-2">
       <label for="atuacao-inp">Cidade</label>
-      <select [(ngModel)]="endereco.cidade" [disabled]="isBuscandoCEP" type="text" class="form-control">
+      <select [(ngModel)]="user.city" [disabled]="isBuscandoCEP" type="text" class="form-control">
         <option>São Paulo</option>
         <option>Rio de Janeiro</option>
       </select>

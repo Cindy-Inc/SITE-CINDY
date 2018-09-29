@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <h1 class="display-4" id="titulo">Cadastro Empresa</h1>
   <h4 class="display-5" id="titulo">Dados Responsável</h4>
   <div class="form-row">
@@ -13,6 +13,10 @@
   </div>
   <h4 class="display-5" id="titulo">Dados Estabelecimento</h4>
   <div class="form-row">
+    <div class="form-group col-md-2">
+      <label for="atuacao-inp">CNPJ</label>
+      <input type="text" class="form-control">
+    </div>
     <div class="form-group col-md-3">
       <label for="atuacao-inp">Nome Fantasia</label>
       <input type="text" class="form-control">
@@ -20,17 +24,17 @@
     <div class="form-group col-md-2">
       <label for="atuacao-inp">Ramo de atuação</label>
       <select type="text" class="form-control">
-          <option>
-            Pizzaria
-          </option>
-        </select>
+        <option>
+          Pizzaria
+        </option>
+      </select>
     </div>
   </div>
-  <app-endereco [endereco]="novoEndereco"></app-endereco>
+  <app-endereco [user]="novoEndereco"></app-endereco>
   <div class="form-row">
     <div class="form-group col-md-2">
       <button type="button" class="btn btn-warning" (click)="limparInputs()">Limpar</button>
       <button type="button" class="btn btn-success" (click)="cadastrarEmpresa()">Cadastrar</button>
     </div>
   </div>
-</div>
+</div> -->

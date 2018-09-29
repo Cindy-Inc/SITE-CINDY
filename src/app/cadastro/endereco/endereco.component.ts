@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Endereco } from '../../model';
+import { Usuario } from '../../model';
 import { ConsultaCepDTO } from '../../dto';
 import { ConsultaCepService } from '../../service';
 
@@ -11,30 +11,19 @@ import { ConsultaCepService } from '../../service';
 })
 export class EnderecoComponent implements OnInit {
 
-  _endereco: Endereco;
   isBuscandoCEP: boolean;
 
-  constructor(private consultaCepService: ConsultaCepService) {
-    this._endereco = new Endereco();
-  }
+  constructor(private consultaCepService: ConsultaCepService) {}
 
-  @Input() set endereco(e: Endereco) {
-    if (e) {
-      this._endereco = e;
-    }
-  }
-
-  get endereco(): Endereco {
-    return this._endereco;
-  }
+  @Input() user: Usuario;
 
   ngOnInit() {
   }
 
   private consultaCep() {
-    if (this.endereco.cep && this.endereco.cep.length >= 8) {
+    if (this.user.zip && this.user.zip.length >= 8) {
       this.isBuscandoCEP = true;
-      this.consultaCepService.getEnderecoFromCEP(this.endereco.cep).subscribe(end => {
+      this.consultaCepService.getEnderecoFromCEP(this.user.zip).subscribe(end => {
         this.fromCep(end);
         this.isBuscandoCEP = false;
       });
@@ -43,13 +32,11 @@ export class EnderecoComponent implements OnInit {
 
   private fromCep(enderecoCep: ConsultaCepDTO) {
     if (enderecoCep) {
-      this.endereco.bairro = enderecoCep.bairro;
-      this.endereco.cep = enderecoCep.cep;
-      this.endereco.complemento = enderecoCep.complemento;
-      this.endereco.cidade = enderecoCep.localidade;
-      this.endereco.logradouro = enderecoCep.logradouro;
-      this.endereco.uf = enderecoCep.uf;
-      this.endereco.bairro = enderecoCep.bairro;
+      this.user.district = enderecoCep.bairro;
+      this.user.zip = enderecoCep.cep;
+      this.user.city = enderecoCep.localidade;
+      this.user.address = enderecoCep.logradouro;
+      this.user.uf = enderecoCep.uf;
     }
   }
 

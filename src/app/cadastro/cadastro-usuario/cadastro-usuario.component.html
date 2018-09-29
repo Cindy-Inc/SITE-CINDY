@@ -1,25 +1,25 @@
 <div class="container-fluid">
   <h1 class="display-4" id="titulo">Cadastro Usuário</h1>
   <div class="form-row">
-    <div class="form-group col-md-2">
+    <!-- <div class="form-group col-md-2">
       <img src="" id="cadastro-avatar-img" class="rounded float-left" alt="...">
-    </div>
-    <div class="form-group col-md-2">
+    </div> -->
+    <div class="form-group col-md-4">
       <!-- <div class="form-row">
         <label for="cnpj-inp">Usuário</label>
         <input [(ngModel)]="usuario.codigo" placehoder="Gerado automaticamente" type="text" class="form-control" id="cnpj-inp">
       </div> -->
       <div class="form-row">
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-5">
           <label for="atuacao-inp">Nome</label>
-          <input [(ngModel)]="usuario.nome" type="text" class="form-control">
+          <input [(ngModel)]="usuario.name" type="text" class="form-control">
         </div>
-        <div class="form-group col-md-6">
+        <div class="form-group col-md-7">
           <label for="atuacao-inp">Sobrenome</label>
-          <input [(ngModel)]="usuario.sobrenome" type="text" class="form-control">
+          <input type="text" class="form-control">
         </div>
       </div>
-      <div class="form-row">
+      <!-- <div class="form-row">
         <label for="razao-inp">Foto de Perfil</label>
         <div class="custom-file" id="customFile" lang="es">
           <input type="file" (change)="fileChange($event)" class="custom-file-input" id="exampleInputFile" aria-describedby="fileHelp">
@@ -27,8 +27,8 @@
             Select file...
           </label>
         </div>
-      </div>
-      <div class="form-row">
+      </div> -->
+      <!-- <div class="form-row">
         <div class="form-group col-md-12">
           <label for="atuacao-inp">Sexo</label>
           <div class="radio">
@@ -38,28 +38,43 @@
               <input type="radio" name="optradio">Masculino</label>
           </div>
         </div>
+      </div> -->
+    </div>
+  </div>
+  <div class="form-row">
+      <div class="form-group col-md-2">
+        <label for="atuacao-inp">E-mail</label>
+        <input [(ngModel)]="usuario.email" type="e-mail" class="form-control">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="atuacao-inp">Senha</label>
+        <input [(ngModel)]="usuario.password" type="password" class="form-control">
+      </div>
+      <div class="form-group col-md-2">
+        <label for="atuacao-inp">Confirmar Senha</label>
+        <input type="password" class="form-control">
       </div>
     </div>
-  </div>
-  <app-endereco [endereco]="usuario.endereco"></app-endereco>
+  <h4 class="display-5" id="titulo">Dados Estabelecimento</h4>
   <div class="form-row">
     <div class="form-group col-md-2">
-      <label for="atuacao-inp">E-mail</label>
-      <input [(ngModel)]="usuario.email" type="e-mail" class="form-control">
+      <label for="atuacao-inp">CNPJ</label>
+      <input type="text" class="form-control">
     </div>
-  </div>
-  <div class="form-row">
     <div class="form-group col-md-2">
-      <label for="atuacao-inp">Senha</label>
-      <input [(ngModel)]="usuario.senha" type="password" class="form-control">
+      <label for="atuacao-inp">Nome Fantasia</label>
+      <input type="text" class="form-control">
     </div>
-  </div>
-  <div class="form-row">
     <div class="form-group col-md-2">
-      <label for="atuacao-inp">Confirmar Senha</label>
-      <input type="password" class="form-control">
+      <label for="atuacao-inp">Ramo de atuação</label>
+      <select type="text" class="form-control">
+        <option>
+          Pizzaria
+        </option>
+      </select>
     </div>
   </div>
+  <app-endereco [user]="usuario"></app-endereco>
   <div class="form-row">
     <div class="form-group col-md-2">
       <button type="button" class="btn btn-warning" (click)="limparInputs()">Limpar</button>

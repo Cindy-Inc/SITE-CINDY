@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
-import { Empresa, Usuario } from '../../model';
+import { Usuario } from '../../model';
+import { CindyService } from '../../service/';
 
 @Component({
   selector: 'app-cadastro-usuario',
@@ -12,8 +14,10 @@ export class CadastroUsuarioComponent implements OnInit {
   usuario: Usuario;
   cep: string;
   isBuscandoCEP: boolean;
+  returnMsg: string;
 
-  constructor() {
+  constructor(private cindyService: CindyService,
+    private router: Router) {
     this.usuario = new Usuario();
   }
 
@@ -38,8 +42,11 @@ export class CadastroUsuarioComponent implements OnInit {
   }
 
   cadastrarEmpresa() {
-    console.log(this.usuario);
+    this.cindyService.cadastroUsuario(this.usuario).subscribe((data) => {
+      this.returnMsg = 'Usuário cadastrado com sucesso!';
+      this.router.navigate(['login']);
+    }, (err) => {
+      this.returnMsg = 'Erro ao cadastrar usuário!';
+    });
   }
-
-
 }

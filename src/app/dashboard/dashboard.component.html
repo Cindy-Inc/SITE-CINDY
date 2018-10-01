@@ -1,9 +1,21 @@
-<div class="container-fluid dashboard-container">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/cadastro-produto" routerLinkActive="active">Cadastro Produto</a>
+      </li>
+      <li class="nav-item active">
+          <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+<div class="container-fluid dashboard-container" (click)="mock()">
   <h1 class="display-4" id="titulo">Dashboard de Pedidos</h1>
   <div class="table-wrapper">
     <table class="table table-striped">
       <thead>
-        <tr (click)="showOrder()">
+        <tr>
           <th scope="col">#</th>
           <th scope="col">Descrição</th>
           <th scope="col">Endereço</th>

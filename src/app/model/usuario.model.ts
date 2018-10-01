@@ -12,9 +12,12 @@ export class Usuario {
     city: string;
     district: string;
     phone: string;
+    type: string;
     uf: string;
     email: string;
     password: string;
 
-    constructor() { }
+    constructor() {
+      this.type = 'estabelecimento';
+    }
 }

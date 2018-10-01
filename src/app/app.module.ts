@@ -7,7 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { CadastroEmpresaComponent, CadastroProdutoComponent, CadastroUsuarioComponent } from './cadastro';
-import { ConsultaCepService } from './service';
+import { ConsultaCepService, CindyService } from './service';
 import { EnderecoComponent } from './cadastro/endereco/endereco.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
@@ -34,7 +34,8 @@ import { StatusBadgeComponent } from './dashboard/status-badge/status-badge.comp
     HttpModule
   ],
   providers: [
-    ConsultaCepService
+    ConsultaCepService,
+    CindyService
   ],
   bootstrap: [AppComponent]
 })

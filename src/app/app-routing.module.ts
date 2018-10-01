@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { AppComponent } from './app.component';
 
 export const routes: Routes = [
+  { path: '',  redirectTo: '/login', pathMatch: 'full' },
   { path: 'cadastro-empresa',  component: CadastroEmpresaComponent },
   { path: 'cadastro-produto',  component: CadastroProdutoComponent },
   { path: 'cadastro-usuario',  component: CadastroUsuarioComponent },

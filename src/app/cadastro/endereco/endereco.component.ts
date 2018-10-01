@@ -36,7 +36,7 @@ export class EnderecoComponent implements OnInit {
       this.user.zip = enderecoCep.cep;
       this.user.city = enderecoCep.localidade;
       this.user.address = enderecoCep.logradouro;
-      this.user.uf = enderecoCep.uf;
+      this.user.state = enderecoCep.uf;
     }
   }
 
